@@ -21,3 +21,5 @@ $router->post('/siswa', 'API\SiswaController@create');
 $router->put('/siswa/update/{id}', 'API\SiswaController@update');
 $router->delete('/siswa/delete/{id}', 'API\SiswaController@destroy');
 
+$router->post('register', 'API\AuthController@register');
+$router->post('login', 'API\AuthController@login');

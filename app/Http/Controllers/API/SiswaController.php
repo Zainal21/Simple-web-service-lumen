@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Siswa;
 class SiswaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Create a new controller instance.
      *
@@ -22,7 +26,7 @@ class SiswaController extends Controller
     public function create(Request $req)
     {
         $this->validate($req,[
-            'name' => 'required',
+            'nama' => 'required',
             'kelas' => 'required',
             'alamat' => 'required'
         ]);
@@ -46,7 +50,7 @@ class SiswaController extends Controller
     public function update(Request $req,$id)
     {
         $this->validate($req,[
-            'name' => 'required',
+            'nama' => 'required',
             'kelas' => 'required',
             'alamat' => 'required'
         ]);
